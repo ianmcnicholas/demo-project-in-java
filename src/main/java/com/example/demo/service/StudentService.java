@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.exception.EmailDuplicationException;
 import com.example.demo.model.Student;
 import com.example.demo.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,10 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-    public void addNewStudent(Student student) {
-        studentRepository.save(student);
-        System.out.println("SUCCESS!!!");
+    public void addNewStudent(Student student) throws EmailDuplicationException {
+
+        if (studentRepository.findAllByEmail(student.getEmail()).isEmpty()) {
+            studentRepository.save(student);
+        } else throw new EmailDuplicationException("The email address " + student.getEmail() + " is already taken.");
     }
 }

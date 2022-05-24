@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.exception.EmailDuplicationException;
 import com.example.demo.model.Student;
 import com.example.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,8 @@ public class StudentController {
     }
 
     @PostMapping
-    public void registerStudent(@RequestBody Student student){
-        studentService.addNewStudent(student);
+    public void registerStudent(@RequestBody Student student) throws EmailDuplicationException {
+        studentService. addNewStudent(student);
     }
 
 }
