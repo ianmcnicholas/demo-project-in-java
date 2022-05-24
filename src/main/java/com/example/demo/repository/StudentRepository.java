@@ -1,4 +1,8 @@
 package com.example.demo.repository;
 
-public interface StudentRepository{
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import javax.persistence.Id;
+
+public interface StudentRepository extends JpaRepository<Id, Long> {
 }
