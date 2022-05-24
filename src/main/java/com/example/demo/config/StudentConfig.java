@@ -1,4 +1,4 @@
-package config;
+package com.example.demo.config;
 
 import com.example.demo.model.Student;
 import com.example.demo.repository.StudentRepository;
@@ -26,6 +26,7 @@ public class StudentConfig {
                     List.of(ian, jeff, hugh)
             );
         };
+
     }
 
 }
