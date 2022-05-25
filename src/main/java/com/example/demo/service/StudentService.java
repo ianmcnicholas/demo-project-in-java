@@ -43,6 +43,7 @@ public class StudentService {
     }
 
     @Transactional
+    // ^^^^^ allows database to update itself through the method.
     public void updateStudent(Long studentId, String name ,String email)
             throws NoStudentFoundException, EmailDuplicationException {
 
@@ -59,6 +60,7 @@ public class StudentService {
             student.setName(name);
         }
 
+        // ^^^^^ Basic validation / verification that could be increased e.g. email format, exceptions etc.
     }
 
 
