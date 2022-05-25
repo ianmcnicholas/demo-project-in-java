@@ -17,6 +17,25 @@ The structure of the project is as follows:
 The API uses an [imported library](https://github.com/wimdeblauwe/error-handling-spring-boot-starter) to send readable
 error messages to the user, along with logging the appropriate data.
 
+### API REQUESTS ###
+
+`GET`
+http://localhost:8080/api/v1/student will return the list of students. <BR>
+`POST` http://localhost:8080/api/v1/student with a JSON request body of e.g.
+
+``` 
+{
+    "name": "dave",
+    "email": "dave@example.com",
+    "dob": "1960-01-01"
+}
+```
+
+will add a new student to the database. <BR>
+`DELETE` http://localhost:8080/api/v1/student/{id} will delete the student with id = {id}. <BR>
+`PUT` http://localhost:8080/api/v1/student/{id}?name={name}&email={email} will update student with id = {id} with a new
+{name} and {email}. 
+
 24.05.2022 Update
 
 * As this is a demo project, TDD has not been followed to allow for exploratory learning.
