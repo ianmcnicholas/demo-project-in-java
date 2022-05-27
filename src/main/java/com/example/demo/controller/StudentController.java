@@ -13,6 +13,8 @@ import java.util.List;
 @RequestMapping(path = "api/v1/student")
 public class StudentController {
 
+    // TODO integration test with MockMVC - see link from RD.  Mock the service.
+
     @Autowired
     private final StudentService studentService;
 

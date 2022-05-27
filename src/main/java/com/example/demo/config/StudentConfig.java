@@ -5,6 +5,7 @@ import com.example.demo.repository.StudentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 public class StudentConfig {
 
     @Bean
+    @Profile(value = "!test")
     CommandLineRunner commandLineRunner(StudentRepository studentRepository) {
         return args -> {
             Student ian = new Student(
